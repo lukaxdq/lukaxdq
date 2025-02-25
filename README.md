@@ -1,4 +1,3 @@
-[![Luka's GitHub Banner](https://github.com/lukaxdq/lukaxdq/blob/main/banner.png)](https://github.com/lukaxdq)
 # Hello! I'm Luka 👋
 
 - 🔹 I love working with **C++, Python**, and **JavaScript**  
