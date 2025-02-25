@@ -17,5 +17,5 @@ I'm a Computer Science student and an aspiring penetration tester.
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&layout=compact&theme=dark)
 
 ## 🎮 Connect with me:
-[![Discord](https://img.shields.io/badge/Discord-Luka1337-5865F2?style=flat&logo=discord)]([https://discord.com/](https://discordapp.com/users/998585779804708864))
+[![Discord](https://img.shields.io/badge/Discord-Luka-5865F2?style=flat&logo=discord)]([https://discord.com/](https://discordapp.com/users/998585779804708864))
 
