@@ -1,9 +1,10 @@
 # Hello! I'm Luka 👋
 
-I'm a Computer Science student and an penetration tester. 
+I'm a Computer Science student and an aspiring penetration tester.  
 
-- 🔹 I love working with **C++, Python**, and **JavaScript**
-- 💻 Passionate about cybersecurity and Active Directory hacking.
+- 🔹 I love working with **C++, Python**, and **JavaScript**  
+- 💻 Passionate about cybersecurity and pentesting.  
+- ⚡ Fun fact: I use both **Linux & Windows**!  
 
 ## 🛠 Languages and Tools:
 <p align="left">
@@ -17,5 +18,6 @@ I'm a Computer Science student and an penetration tester.
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&layout=compact&theme=dark)
 
 ## 🎮 Connect with me:
-[![Discord](https://img.shields.io/badge/Discord-Luka-5865F2?style=flat&logo=discord)]([https://discord.com/](https://discordapp.com/users/998585779804708864))
-
+[![GitHub](https://img.shields.io/badge/GitHub-lukaxdq-181717?style=flat&logo=github)](https://github.com/lukaxdq)  
+[![Discord](https://img.shields.io/badge/Discord-Luka-5865F2?style=flat&logo=discord)](https://discordapp.com/users/998585779804708864)
+![Metrics](https://metrics.lecoq.io/lukaxdq?template=classic&base.header=0&gists=1&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&languages=1&languages.limit=8&languages.sections=most-used&languages.colors=github&languages.threshold=0%25&config.timezone=Europe%2FBelgrade)
