@@ -1,6 +1,6 @@
 # Hello! I'm Luka 👋
 
-I'm a Computer Science student and an aspiring penetration tester. 
+I'm a Computer Science student and an penetration tester. 
 
 - 🔹 I love working with **C++, Python**, and **JavaScript**
 - 💻 Passionate about cybersecurity and Active Directory hacking.
