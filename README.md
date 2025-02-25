@@ -1,8 +1,6 @@
 [![Luka's GitHub Banner](https://github.com/lukaxdq/lukaxdq/blob/main/banner.png)](https://github.com/lukaxdq)
 # Hello! I'm Luka 👋
 
-I'm a Computer Science student and an aspiring penetration tester.  
-
 - 🔹 I love working with **C++, Python**, and **JavaScript**  
 - 💻 Passionate about cybersecurity and pentesting.  
 - ⚡ Fun fact: I use both **Linux & Windows**!  
