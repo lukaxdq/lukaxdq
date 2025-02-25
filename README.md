@@ -4,7 +4,6 @@ I'm a Computer Science student and an aspiring penetration tester.
 
 - 🔹 I love working with **C++, Python**, and **JavaScript**
 - 💻 Passionate about cybersecurity and Active Directory hacking.
-- ⚡ Fun fact: I use both **Linux & Windows**!
 
 ## 🛠 Languages and Tools:
 <p align="left">
