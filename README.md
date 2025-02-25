@@ -12,10 +12,10 @@ I'm a Computer Science student and an aspiring penetration tester.
 </p>
 
 ## 📊 GitHub Stats:
-![Luka's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Luka1337&show_icons=true&theme=dark)
+![Luka's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Lukaxqd&show_icons=true&theme=dark)
 
 ## 🔥 Most Used Languages:
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Luka1337&layout=compact&theme=dark)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxqd&layout=compact&theme=dark)
 
 ## 🎮 Connect with me:
-[![Discord](https://img.shields.io/badge/Discord-Luka1337-5865F2?style=flat&logo=discord)](https://discord.com/)
+[![Discord](https://discordapp.com/users/998585779804708864)
