@@ -11,7 +11,7 @@ I'm a Computer Science student and an aspiring penetration tester.
 </p>
 
 ## 📊 GitHub Stats:
-![Luka's GitHub Stats](https://github-readme-stats.vercel.app/api?username=lukaxdqd&show_icons=true&theme=dark)
+![Luka's GitHub Stats](https://github-readme-stats.vercel.app/api?username=lukaxdq&show_icons=true&theme=dark)
 
 ## 🔥 Most Used Languages:
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&layout=compact&theme=dark)
