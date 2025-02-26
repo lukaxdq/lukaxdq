@@ -2,7 +2,6 @@
 
 - 🔹 I love working with **C++, Python**, and **JavaScript**  
 - 💻 Passionate about cybersecurity and pentesting.  
-- ⚡ Fun fact: I use both **Linux & Windows**!  
 
 ## 🛠 Languages and Tools:
 <p align="left">
