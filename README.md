@@ -1,32 +1,42 @@
-Greetings, I am Luka! 👋
+👋 Hello, I'm Luka!
 
-💻 Professional Overview
+💻 About Me
 
-I am an emerging cybersecurity specialist with a deep-rooted foundation in programming, currently focusing on penetration testing and security research. My primary domain of expertise involves adversarial security methodologies, including Active Directory exploitation and advanced automation techniques utilizing AutoHotkey (AHK).
+I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and security research. My expertise lies in offensive security methodologies, including Active Directory exploitation and automation with AutoHotkey (AHK).
 
-🔧 Technical Proficiencies
+🛠️ Technical Skills
 
-Programming Languages: Proficient in C++ and Python, with foundational knowledge of JavaScript
+Programming: C++, Python, and basic JavaScript
 
-Cybersecurity Focus Areas: Penetration testing, exploit development, and Active Directory security analysis
+Cybersecurity: Penetration testing, exploit development, and Active Directory security
 
-Automation & Scripting: Advanced AutoHotkey (AHK) scripting for system and security automation
+Automation: AutoHotkey (AHK) scripting for security and system automation
 
-Operating Systems: Primarily proficient in Windows environments, with substantial experience in Linux-based systems
+Operating Systems: Proficient in Windows, with experience in Linux environments
 
-🎯 Research Interests & Objectives
+🎯 Goals & Interests
 
-Achieve mastery in offensive security techniques, with a specialization in red teaming methodologies 🛡️
+Master penetration testing and red teaming techniques 🛡️
 
-Advance my expertise in exploit development, particularly within networked and enterprise environments 🎭
+Advance in exploit development and enterprise security 🎭
 
-Expand my proficiency in JavaScript to deepen my understanding of web application security vulnerabilities 🌐
+Improve JavaScript skills for web security 🌐
 
-📫 Contact & Collaboration
+📊 GitHub Stats
 
-GitHub
+![lukaxdq's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&show_icons=true&hide_border=true&layout=compact)
 
-Email: pajkanovicluka7@gmail.com
+![lukaxdq's Streak](https://github-readme-streak-stats.herokuapp.com/?user=lukaxdq&theme=dark&hide_border=true)
 
-I am open to collaboration on research-driven cybersecurity projects and welcome discussions on advanced penetration testing techniques. Let's innovate and push the boundaries of cybersecurity together! 🚀
+![lukaxdq's Stats](https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&show_icons=true&hide_border=true&count_private=true)
+
+
+
+📬 Get in Touch
+
+GitHub: [Your GitHub Profile Link]
+
+Email: [Your Email (if you choose to share it)]
+
+Always open to learning, collaborating, and exploring new frontiers in cybersecurity! 🚀
 
