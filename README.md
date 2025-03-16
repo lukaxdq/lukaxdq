@@ -26,7 +26,7 @@ Expand my proficiency in JavaScript to deepen my understanding of web applicatio
 
 GitHub
 
-Email: [Your Email (pajkanovicluka7@gmail.com)]
+Email: pajkanovicluka7@gmail.com
 
 I am open to collaboration on research-driven cybersecurity projects and welcome discussions on advanced penetration testing techniques. Let's innovate and push the boundaries of cybersecurity together! 🚀
 
