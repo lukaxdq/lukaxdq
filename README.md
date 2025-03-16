@@ -36,7 +36,7 @@ Improve JavaScript skills for web security 🌐
 
 GitHub: [Your GitHub Profile Link]
 
-Email: [Your Email (pajkanovicluka7@gmail.com)]
+Email: pajkanovicluka7@gmail.com
 
 Always open to learning, collaborating, and exploring new frontiers in cybersecurity! 🚀
 
