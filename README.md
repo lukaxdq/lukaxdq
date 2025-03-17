@@ -6,8 +6,6 @@ I am a cybersecurity enthusiast and aspiring penetration tester with a strong fo
 
 🛠️ Technical Skills
 
-Programming: C++, Python, 
-
 Cybersecurity: Penetration testing, exploit development, and Active Directory security
 
 Automation: AutoHotkey (AHK) scripting for security and system automation
