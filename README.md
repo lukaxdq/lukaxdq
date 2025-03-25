@@ -35,9 +35,6 @@ Operating Systems: Proficient in Windows, with experience in Linux environments
 ---
 [![](https://visitcount.itsvg.in/api?id=lukaxdq&icon=2&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-
-
 📬 Get in Touch
 
 Email: pajkanovicluka7@gmail.com
