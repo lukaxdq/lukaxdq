@@ -1,10 +1,12 @@
-👋 Hello, I'm Luka!
+Hello, I'm Luka!
 
-💻 About Me
+About Me
 
 I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and security research. My expertise lies in offensive security methodologies, including Active Directory exploitation and automation with AutoHotkey (AHK).
 
-🛠️ Technical Skills
+Working on [Project 100](https://www.roblox.com/games/17712558514/Floor-One)
+
+Technical Skills 
 
 Cybersecurity: Penetration testing, exploit development, and Active Directory security
 
