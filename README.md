@@ -1,3 +1,10 @@
+<style>
+  body {
+    background-color: black;
+    color: white;
+  }
+</style>
+
 Hello, I'm Luka!
 
 About Me
