@@ -2,87 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luka's Cybersecurity Profile</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luka | Cybersecurity Enthusiast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #1e1e1e;
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
       color: #f0f0f0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       padding: 2rem;
     }
 
     a {
-      color: #61dafb;
+      color: #4fc3f7;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
 
-    h1, h2, h3 {
-      color: #00ffff;
-      margin-top: 2rem;
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background-color: #2a2a2a;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #4fc3f7;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
 
     .badges img {
-      margin: 5px;
+      margin: 4px;
     }
 
-    .section {
-      margin-bottom: 2rem;
+    .project-banner {
+      background-color: #202020;
+      border-left: 5px solid #4fc3f7;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
     }
 
-    .socials a {
-      margin-right: 10px;
-      display: inline-block;
+    .project-banner h3 {
+      font-size: 1.75rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
     }
 
-    .highlight {
-      color: #ffdd54;
+    .project-banner p {
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #888;
+      font-size: 0.9rem;
     }
 
     .quote-img {
       max-width: 100%;
+      margin-top: 1rem;
     }
 
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid #333;
-      padding-top: 1rem;
+    .socials a img {
+      margin: 4px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Luka Pajkanovic</h1>
+    <p>Cybersecurity Enthusiast | Penetration Tester | Automation Developer</p>
+  </header>
 
-  <h1>Hello, I'm Luka! 👋</h1>
-
-  <p class="section">
-    I am a <span class="highlight">cybersecurity enthusiast</span> and aspiring penetration tester with a strong foundation in programming and security research.<br>
-    My expertise lies in <strong>offensive security methodologies</strong>, including <strong>Active Directory exploitation</strong> and automation with <strong>AutoHotkey (AHK)</strong>.
-  </p>
-
-  <div class="section">
-    <h2>🛠 Currently Working On</h2>
-    <p><a href="https://www.roblox.com/games/17712558514/Floor-One" target="_blank">Project 100</a></p>
+  <div class="project-banner">
+    <h3>Currently Building: Project 100</h3>
+    <p>Join the development community on Discord to follow our progress and contribute.</p>
+    <a href="https://discord.gg/VsfwHsdsN5" target="_blank">discord.gg/VsfwHsdsN5</a>
   </div>
 
-  <div class="section">
-    <h2>🧠 Technical Skills</h2>
+  <section>
+    <h2>Professional Summary</h2>
+    <p>I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and security research. My expertise lies in offensive security methodologies, including Active Directory exploitation and automation with AutoHotkey (AHK).</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Cybersecurity:</strong> Penetration testing, exploit development, Active Directory security</li>
-      <li><strong>Automation:</strong> AutoHotkey (AHK) scripting for security and system automation</li>
-      <li><strong>Operating Systems:</strong> Windows (proficient), Linux (experienced)</li>
+      <li>Penetration Testing and Active Directory Security</li>
+      <li>Automation using AutoHotkey (AHK)</li>
+      <li>Operating Systems: Windows (primary), Linux (experienced)</li>
+      <li>Programming: C++, Python, Luau, JavaScript, TypeScript</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>🌐 Socials</h2>
+  <section>
+    <h2>Social Links</h2>
     <div class="socials">
       <a href="https://discord.com/users/998585779804708864" target="_blank">
         <img src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white" alt="Discord">
@@ -91,71 +149,42 @@
         <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email">
       </a>
     </div>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>💻 Tech Stack</h2>
+  <section>
+    <h2>Technology Stack</h2>
     <div class="badges">
-      <!-- Badges Grouped -->
-      <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" />
-      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" />
-      <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white" />
-      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E" />
-      <img src="https://img.shields.io/badge/markdown-%23000000.svg?style=flat&logo=markdown&logoColor=white" />
-      <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white" />
-      <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white" />
-      <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" />
-      <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white" />
-      <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=Cloudflare&logoColor=white" />
-      <img src="https://img.shields.io/badge/.NET-5C2D91?style=flat&logo=.net&logoColor=white" />
-      <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" />
-      <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=flat&logo=npm&logoColor=white" />
-      <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=flat&logo=vuedotjs&logoColor=%234FC08D" />
-      <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white" />
-      <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat&logo=react-router&logoColor=white" />
-      <img src="https://img.shields.io/badge/react_native-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" />
-      <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat&logo=nestjs&logoColor=white" />
-      <img src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white" />
-      <img src="https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white" />
-      <img src="https://img.shields.io/badge/expo-1C1E24?style=flat&logo=expo&logoColor=#D04A37" />
-      <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat&logo=mysql&logoColor=white" />
-      <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white" />
-      <img src="https://img.shields.io/badge/-Arduino-00979D?style=flat&logo=Arduino&logoColor=white" />
+      <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" alt="C++">
+      <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="Python">
+      <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white" alt="Lua">
+      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
+      <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white" alt="PowerShell">
+      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML5">
+      <img src="https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white" alt="Node.js">
     </div>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>📊 GitHub Stats</h2>
-    <img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats">
-    <br>
+  <section>
+    <h2>GitHub Statistics</h2>
+    <img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true" alt="GitHub Stats">
+    <br><br>
     <img src="https://nirzak-streak-stats.vercel.app/?user=lukaxdq&theme=dark&hide_border=true" alt="GitHub Streak">
-    <br>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages">
-  </div>
+    <br><br>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&layout=compact" alt="Top Languages">
+  </section>
 
-  <div class="section">
-    <h2>🏆 GitHub Trophies</h2>
+  <section>
+    <h2>GitHub Achievements</h2>
     <img src="https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies">
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>✍️ Random Dev Quote</h2>
-    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=light" class="quote-img" alt="Dev Quote">
-  </div>
-
-  <div class="section">
-    <h2>🔝 Top Contributed Repo</h2>
-    <img src="https://github-contributor-stats.vercel.app/api?username=lukaxdq&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Top Repo">
-  </div>
+  <section>
+    <h2>Random Dev Quote</h2>
+    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" class="quote-img" alt="Developer Quote">
+  </section>
 
   <footer>
-    📬 Get in Touch: <a href="mailto:pajkanovicluka7@gmail.com">pajkanovicluka7@gmail.com</a><br>
-    Always open to learning, collaborating, and exploring new frontiers in cybersecurity! 🚀
-    <br><br>
-    <a href="https://visitcount.itsvg.in/api?id=lukaxdq&icon=2&color=0">
-      <img src="https://visitcount.itsvg.in/api?id=lukaxdq&icon=2&color=0" alt="Visitor Count">
-    </a>
+    <p>Designed and built by Luka| <a href="mailto:pajkanovicluka7@gmail.com">Contact</a></p>
   </footer>
-
 </body>
 </html>
