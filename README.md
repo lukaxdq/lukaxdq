@@ -1,10 +1,3 @@
-<style>
-  body {
-    background-color: black;
-    color: white;
-  }
-</style>
-
 Hello, I'm Luka!
 
 About Me
@@ -50,3 +43,9 @@ Email: pajkanovicluka7@gmail.com
 
 Always open to learning, collaborating, and exploring new frontiers in cybersecurity! 🚀
 
+<style>
+  body {
+    background-color: black;
+    color: white;
+  }
+</style>
