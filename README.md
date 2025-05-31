@@ -45,7 +45,7 @@ Always open to learning, collaborating, and exploring new frontiers in cybersecu
 
 <style>
   body {
-    background-color: black;
+    background-color: #28282B;
     color: white;
   }
 </style>
