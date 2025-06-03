@@ -1,119 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="style.css">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luka</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/104390055?v=4">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-      line-height: 1.6;
-      padding: 2rem;
-    }
-
-    a {
-      color: #4fc3f7;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #b0b0b0;
-    }
-
-    section {
-      margin-bottom: 3rem;
-      background-color: #2a2a2a;
-      padding: 2rem;
-      border-radius: 12px;
-    }
-
-    h2 {
-      color: #ffffff;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: "•";
-      color: #4fc3f7;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    .badges img {
-      margin: 4px;
-    }
-
-    .project-banner {
-      background-color: #202020;
-      border-left: 5px solid #4fc3f7;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-    }
-
-    .project-banner h3 {
-      font-size: 1.75rem;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-banner p {
-      font-size: 1rem;
-      color: #cccccc;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    .quote-img {
-      max-width: 100%;
-      margin-top: 1rem;
-    }
-
-    .socials a img {
-      margin: 4px;
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
+
 <body>
   <header>
+    <img src="https://avatars.githubusercontent.com/u/104390055?v=4" alt="Luka Profile" class="profile-img" width="96"
+      height="96" style="border-radius:50%;margin-bottom:1rem;box-shadow:0 2px 8px #0003;">
     <h1>Luka</h1>
     <p>Cybersecurity Enthusiast | Lua/Luau Developer</p>
   </header>
@@ -121,12 +26,20 @@
   <div class="project-banner">
     <h3>Currently Developing: Project 100</h3>
     <p>Join the development community on Discord to follow our progress and contribute.</p>
-    <a href="https://discord.gg/VsfwHsdsN5" target="_blank">Project 100</a>
+    <a href="https://discord.gg/VsfwHsdsN5" target="_blank" class="discord-btn">Join Project 100 Discord</a>
   </div>
 
   <section>
+    <h2>About Me</h2>
+    <p>Hi! I'm Luka, passionate about cybersecurity and programming. I love exploring offensive security, automating tasks,
+      and building tools that make a difference. Always eager to learn and collaborate!</p>
+  </section>
+
+  <section>
     <h2>Professional Summary</h2>
-    <p>I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and security research. My expertise lies in offensive security methodologies, including Active Directory exploitation and automation with AutoHotkey (AHK).</p>
+    <p>I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and
+      security research. My expertise lies in offensive security methodologies, including Active Directory exploitation
+      and automation with AutoHotkey (AHK).</p>
   </section>
 
   <section>
@@ -141,10 +54,10 @@
   <section>
     <h2>Social Links</h2>
     <div class="socials">
-      <a href="https://discord.com/users/998585779804708864" target="_blank">
+      <a href="https://discord.com/users/998585779804708864" target="_blank" title="Discord">
         <img src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white" alt="Discord">
       </a>
-      <a href="mailto:pajkanovicluka7@gmail.com">
+      <a href="mailto:pajkanovicluka7@gmail.com" title="Email">
         <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email">
       </a>
     </div>
@@ -156,8 +69,10 @@
       <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" alt="C++">
       <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="Python">
       <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white" alt="Lua">
-      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-      <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white" alt="PowerShell">
+      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E"
+        alt="JavaScript">
+      <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white"
+        alt="PowerShell">
       <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML5">
       <img src="https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white" alt="Node.js">
     </div>
@@ -165,25 +80,33 @@
 
   <section>
     <h2>GitHub Statistics</h2>
-    <img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true" alt="GitHub Stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true"
+      alt="GitHub Stats">
     <br><br>
     <img src="https://nirzak-streak-stats.vercel.app/?user=lukaxdq&theme=dark&hide_border=true" alt="GitHub Streak">
     <br><br>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&layout=compact" alt="Top Languages">
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&layout=compact"
+      alt="Top Languages">
   </section>
 
   <section>
     <h2>GitHub Achievements</h2>
-    <img src="https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies">
+    <img
+      src="https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4"
+      alt="GitHub Trophies">
   </section>
 
   <section>
     <h2>Random Dev Quote</h2>
-    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" class="quote-img" alt="Developer Quote">
+    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" class="quote-img"
+      alt="Developer Quote">
   </section>
 
   <footer>
-    <p>Designed and built by Luka| <a href="mailto:pajkanovicluka7@gmail.com">Contact</a></p>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top">↑</button>
+    <p>Designed and built by Luka | <a href="mailto:pajkanovicluka7@gmail.com">Contact</a></p>
   </footer>
 </body>
+
 </html>
