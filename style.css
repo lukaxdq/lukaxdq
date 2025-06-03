@@ -268,3 +268,57 @@ footer {
         padding: 0.2rem;
     }
 }
+
+@media (max-width: 500px) {
+    body {
+        padding: 0.2rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    section, .project-banner {
+        padding: 0.5rem 0.2rem;
+        border-radius: 8px;
+    }
+    .project-banner {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+    .profile-img {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.7rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+        padding-bottom: 0.3rem;
+    }
+    ul li {
+        font-size: 0.98rem;
+    }
+    .mywork-section li {
+        padding: 0.4rem 0.2rem;
+        font-size: 0.98rem;
+    }
+    .github-cards {
+        gap: 0.5rem;
+    }
+    .github-cards img {
+        max-width: 100%;
+        padding: 0.1rem;
+    }
+    .back-to-top {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+        bottom: 8px;
+        right: 8px;
+    }
+    .badges img, .socials a img {
+        width: 80px !important;
+        height: auto !important;
+    }
+}
