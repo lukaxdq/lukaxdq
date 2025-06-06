@@ -37,6 +37,11 @@ header p {
     color: #b0b0b0;
 }
 
+header p span.roblox-highlight {
+    color: var(--roblox-blue);
+    font-weight: 500;
+}
+
 section {
     margin-bottom: 2.5rem;
     background: linear-gradient(120deg, #23272f 60%, #1a1a1a 100%);
@@ -45,6 +50,7 @@ section {
     box-shadow: 0 2px 12px #0002;
     transition: box-shadow 0.3s;
 }
+
 section:hover {
     box-shadow: 0 4px 24px #4fc3f755;
 }
@@ -82,6 +88,7 @@ ul li::before {
     object-fit: cover;
     transition: box-shadow 0.3s, transform 0.2s;
 }
+
 .profile-img:hover {
     box-shadow: 0 8px 32px #4fc3f7cc, 0 4px 16px #0005;
     transform: scale(1.04) rotate(-2deg);
@@ -99,6 +106,7 @@ ul li::before {
     transition: background 0.3s, transform 0.2s;
     box-shadow: 0 2px 8px #0002;
 }
+
 .discord-btn:hover {
     background: linear-gradient(90deg, #4fc3f7 60%, #5865F2 100%);
     transform: translateY(-2px) scale(1.04);
@@ -109,6 +117,7 @@ ul li::before {
     transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 6px;
 }
+
 .socials a img:hover {
     transform: scale(1.08) rotate(-2deg);
     box-shadow: 0 2px 8px #4fc3f7aa;
@@ -118,28 +127,39 @@ ul li::before {
     margin: 4px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .badges img:hover {
     transform: scale(1.08) rotate(2deg);
     box-shadow: 0 2px 8px #4fc3f7aa;
 }
 
 .project-banner {
-    background-color: #202020;
-    border-left: 5px solid #4fc3f7;
+    background: linear-gradient(135deg, #202020 0%, #1a1a1a 100%);
+    border-left: 5px solid var(--roblox-blue);
+    border-top: 1px solid #303030;
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 3rem;
-    transition: box-shadow 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0 2px 12px #0002;
 }
+
 .project-banner:hover {
-    box-shadow: 0 4px 24px #4fc3f755;
+    box-shadow: 0 4px 24px var(--roblox-blue);
+    transform: translateY(-2px);
+}
+
+.project-banner h3 {
+    color: var(--roblox-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .mywork-section ul {
     list-style: none;
     padding-left: 0;
 }
+
 .mywork-section li {
     margin-bottom: 1.5rem;
     background: #23272f;
@@ -147,20 +167,25 @@ ul li::before {
     padding: 1rem 1.5rem;
     box-shadow: 0 2px 8px #0002;
     transition: box-shadow 0.2s, transform 0.2s;
+    border: 1px solid #303030;
 }
+
 .mywork-section li:hover {
     box-shadow: 0 4px 16px #4fc3f755;
     transform: scale(1.02);
 }
+
 .project-img {
     margin-top: 8px;
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 8px #0003;
     transition: box-shadow 0.2s, transform 0.2s;
+    border: 2px solid var(--roblox-blue);
 }
+
 .project-img:hover {
-    box-shadow: 0 4px 16px #4fc3f7aa;
+    box-shadow: 0 4px 20px var(--roblox-blue);
     transform: scale(1.03);
 }
 
@@ -172,6 +197,7 @@ ul li::before {
     align-items: flex-start;
     margin-top: 1.5rem;
 }
+
 .github-cards img {
     border-radius: 10px;
     box-shadow: 0 2px 8px #0002;
@@ -181,6 +207,7 @@ ul li::before {
     max-width: 340px;
     width: 100%;
 }
+
 .github-cards img:hover {
     box-shadow: 0 4px 16px #4fc3f7aa;
     transform: scale(1.03);
@@ -218,6 +245,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 .back-to-top:hover {
     background: #5865F2;
     color: #fff;
@@ -225,10 +253,48 @@ footer {
     transform: scale(1.08);
 }
 
+:root {
+    --roblox-blue: #00A2FF;
+    --roblox-red: #E2231A;
+    --luau-purple: #8c52ff;
+}
+
+/* Enhanced styling for Roblox-related skills */
+.skills-section li.roblox-skill {
+    color: var(--roblox-blue);
+    transition: color 0.3s ease;
+}
+
+.skills-section li.roblox-skill::before {
+    content: "★";
+    color: var(--roblox-blue);
+}
+
+.skills-section li.roblox-skill:hover {
+    color: var(--luau-purple);
+}
+
+/* Technology badges enhancement */
+.badges img[alt*="Roblox"],
+.badges img[alt*="Lua"] {
+    border: 1px solid var(--roblox-blue);
+    padding: 3px 8px;
+    margin: 6px;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.badges img[alt*="Roblox"]:hover {
+    transform: scale(1.12) rotate(3deg);
+    box-shadow: 0 4px 16px var(--roblox-blue);
+    border-color: var(--luau-purple);
+}
+
 @media (max-width: 900px) {
     section {
         padding: 1.2rem 0.7rem;
     }
+
     .github-cards {
         flex-direction: column;
         gap: 1rem;
@@ -239,9 +305,12 @@ footer {
     body {
         padding: 0.5rem;
     }
-    section, .project-banner {
+
+    section,
+    .project-banner {
         padding: 1rem;
     }
+
     .back-to-top {
         bottom: 16px;
         right: 16px;
@@ -256,13 +325,16 @@ footer {
         width: 70px;
         height: 70px;
     }
+
     section {
         padding: 0.7rem 0.2rem;
         border-radius: 10px;
     }
+
     .mywork-section li {
         padding: 0.7rem 0.5rem;
     }
+
     .github-cards img {
         max-width: 100%;
         padding: 0.2rem;
@@ -273,43 +345,55 @@ footer {
     body {
         padding: 0.2rem;
     }
+
     header h1 {
         font-size: 2rem;
     }
+
     header p {
         font-size: 1rem;
     }
-    section, .project-banner {
+
+    section,
+    .project-banner {
         padding: 0.5rem 0.2rem;
         border-radius: 8px;
     }
+
     .project-banner {
         font-size: 0.95rem;
         margin-bottom: 1.2rem;
     }
+
     .profile-img {
         width: 48px;
         height: 48px;
         margin-bottom: 0.7rem;
     }
+
     h2 {
         font-size: 1.1rem;
         padding-bottom: 0.3rem;
     }
+
     ul li {
         font-size: 0.98rem;
     }
+
     .mywork-section li {
         padding: 0.4rem 0.2rem;
         font-size: 0.98rem;
     }
+
     .github-cards {
         gap: 0.5rem;
     }
+
     .github-cards img {
         max-width: 100%;
         padding: 0.1rem;
     }
+
     .back-to-top {
         width: 32px;
         height: 32px;
@@ -317,7 +401,9 @@ footer {
         bottom: 8px;
         right: 8px;
     }
-    .badges img, .socials a img {
+
+    .badges img,
+    .socials a img {
         width: 80px !important;
         height: auto !important;
     }
