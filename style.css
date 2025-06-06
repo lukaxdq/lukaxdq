@@ -318,6 +318,21 @@ footer {
         height: 40px;
         font-size: 1.5rem;
     }
+
+    /* Hide achievements on mobile */
+    .achievements-section {
+        display: none;
+    }
+
+    /* Reduce spacing between sections */
+    section {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Adjust GitHub cards layout */
+    .github-cards {
+        gap: 0.8rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -339,6 +354,11 @@ footer {
         max-width: 100%;
         padding: 0.2rem;
     }
+
+    /* Adjust project banner spacing */
+    .project-banner {
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media (max-width: 500px) {
@@ -351,7 +371,8 @@ footer {
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 
     section,
