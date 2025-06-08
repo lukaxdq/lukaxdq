@@ -1,122 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luka - Game Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00ff88;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #00ff88;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #e0e0e0;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            color: #b0b0b0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            color: #000;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            background: #111111;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #c0c0c0;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #0a0a0a;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .skill-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #000;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .skill-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
+            color: #b0b0b0;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #111111;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #00ff88;
+        }
+
+        .project-description {
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #00ccff;
+            text-shadow: 0 0 5px rgba(0, 204, 255, 0.5);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #0a0a0a;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #00ff88;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .contact-item h3 {
+            color: #00ff88;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #00ccff;
+            text-shadow: 0 0 5px rgba(0, 204, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #666;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <h1>Luka</h1>
-    <p>Cybersecurity Enthusiast | <span class="roblox-highlight">Lua/Luau Developer | Roblox Game Developer</span></p>
-  </header>
+    <header>
+        <nav class="container">
+            <div class="logo">Luka</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="project-banner">
-    <h3>Currently Developing: Project 100</h3>
-    <p>Join the development community on Discord to follow our progress and contribute. Project 100 is an ambitious Roblox experience featuring advanced Luau systems.</p>
-    <a href="https://discord.gg/VsfwHsdsN5" target="_blank" class="discord-btn">Join Project 100 Discord</a>
-  </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hi, I'm Luka</h1>
+                    <p>Game Developer & Lua/Luau Specialist</p>
+                    <a href="#contact" class="btn">Let's Build Something</a>
+                </div>
+            </div>
+        </section>
 
-  <section class="about-section">
-    <h2>About Me</h2>
-    <p>Hi! I'm Luka, passionate about cybersecurity and programming. I love exploring offensive security, automating tasks,
-      and building tools that make a difference. I'm also deeply involved in Roblox game development, creating engaging experiences using Luau. Always eager to learn and collaborate!</p>
-  </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm an enthusiastic game developer with one year of hands-on experience, specializing in Lua and Luau scripting. I enjoy building engaging gameplay mechanics and learning new ways to create immersive experiences.</p>
+                        <p>My focus is on writing clean, efficient code and optimizing game performance. I love tackling challenges and turning creative ideas into interactive projects.</p>
+                        <p>Outside of development, I explore new engines, contribute to open-source, and experiment with fresh gameplay concepts to keep growing as a developer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="summary-section">
-    <h2>Professional Summary</h2>
-    <p>I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and
-      security research. My expertise lies in offensive security methodologies, including Active Directory exploitation
-      and automation with AutoHotkey (AHK). Additionally, I specialize in Roblox game development, creating optimized and secure game systems.</p>
-  </section>
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Game Development</h3>
+                        <p>Lua, Luau, Roblox Studio, Love2D, Corona SDK, Game Logic, AI Systems</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Performance Optimization</h3>
+                        <p>Memory Management, Code Profiling, Algorithm Optimization, Luau JIT</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Tools & Engines</h3>
+                        <p>Unity, Unreal Engine, Roblox Studio, Git, Visual Studio Code, Debugging</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Additional Skills</h3>
+                        <p>JavaScript, Python, C#, JSON/XML, REST APIs, Database Integration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="skills-section">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Penetration Testing and Active Directory Security</li>
-      <li>Operating Systems: Windows (primary), Linux (experienced)</li>
-      <li>Programming: C++, Python, Luau, JavaScript, TypeScript etc</li>      <li class="roblox-skill">Roblox Studio & Game Development</li>
-      <li class="roblox-skill">Advanced Luau Programming & Game Systems Architecture</li>
-      <li class="roblox-skill">Game Performance Optimization</li>
-    </ul>
-  </section>
-  <section class="mywork-section">
-    <h2>My Work</h2>
-    <p>Here are a few projects I've worked on:</p>
-    <ul>
-      <li>
-        <strong>Project 100:</strong>
-        <br>
-        <img src="img/bf019c2d648919455d71eccce8318dac.jpeg" alt="Project 100 Screenshot" class="project-img" style="margin-top:8px;max-width:100%;border-radius:8px;">
-      </li>
-    </ul>
-  </section>
-  <section class="social-section">
-    <h2>Social Links</h2>
-    <div class="socials">
-      <a href="https://discord.com/users/998585779804708864" target="_blank" title="Discord">
-        <img src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white" alt="Discord">
-      </a>
-      <a href="mailto:pajkanovicluka7@gmail.com" title="Email">
-        <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email">
-      </a>
-    </div>
-  </section>
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">Game Screenshot</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project 100</h3>
+                            <p class="project-description">Roblox game inspired on SAO.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Luau</span>
+                                <span class="tech-tag">Roblox Studio</span>
+                                <span class="tech-tag">Visual Studio</span>
+                            </div>
+                            <div class="project-links">
+                              <a href="#" class="project-link" onclick="alert('In development'); return false;">Play Game</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="stack-section">
-    <h2>Technology Stack</h2>
-    <div class="badges">
-      <img src="https://img.shields.io/badge/Roblox_Studio-00A2FF?style=flat&logo=roblox&logoColor=white" alt="Roblox Studio">
-      <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" alt="C++">
-      <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="Python">
-      <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white" alt="Lua">
-      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E"
-        alt="JavaScript">
-      <img src="https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white"
-        alt="PowerShell">
-      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML5">
-      <img src="https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white" alt="Node.js">
-    </div>
-  </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <p>Ready to bring your game ideas to life? I'm always excited to collaborate on innovative projects and discuss new opportunities in game development.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <a href="mailto:lukap.dev@gmail.com">lukap.dev@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/lukaxdq" target="_blank">github.com/lukaxdq</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Discord</h3>
+                            <a href="https://discord.com/users/998585779804708864" target="_blank">l1uka1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section class="github-section">
-    <h2>GitHub Statistics</h2>
-    <div class="github-cards">
-      <img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true"
-        alt="GitHub Stats">
-      <img src="https://nirzak-streak-stats.vercel.app/?user=lukaxdq&theme=dark&hide_border=true" alt="GitHub Streak">
-      <img
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&layout=compact"
-        alt="Top Languages">
-    </div>
-  </section>
-
-  <section class="achievements-section">
-    <h2>GitHub Achievements</h2>
-    <img
-      src="https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4"
-      alt="GitHub Trophies">
-  </section>
-
-  <section class="quote-section">
-    <h2>Random Dev Quote</h2>
-    <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" class="quote-img"
-      alt="Developer Quote">
-  </section>
-
-  <footer>
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top">↑</button>
-    <p>Designed and built by Luka | <a href="https://discord.com/users/998585779804708864">Contact</a></p>
-  </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Luka. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
-
 </html>
