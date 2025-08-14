@@ -407,20 +407,39 @@
             position: relative;
         }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.5), transparent);
+        /* Featured project (bigger, more prominent) */
+        .project-card.featured-project {
+            grid-column: span 2;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #dc2626;
-            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
+        .project-card.featured-project .project-img {
+            height: 320px;
+        }
+
+        .project-card.featured-project .project-title {
+            font-size: 1.6rem;
+        }
+
+        /* Small project (subtle) */
+        .project-card.small-project {
+            opacity: 0.85;
+            transform: none;
+        }
+
+        .project-card.small-project .project-img {
+            height: 140px;
+            background: linear-gradient(135deg, #141414 0%, #0f0f0f 100%);
+        }
+
+        .project-card.small-project .project-title {
+            font-size: 1.05rem;
+        }
+
+        .project-card.small-project .project-description {
+            font-size: 0.95rem;
+            color: #bdbdbf;
+            max-height: 3.6em;
+            overflow: hidden;
         }
 
         .project-img {
@@ -437,10 +456,16 @@
             overflow: hidden;
         }
 
-        .project-img video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.8rem;
         }
 
         .project-content {
@@ -515,6 +540,97 @@
 
         .project-link.discord:hover {
             background: #5865f2;
+        }
+
+        /* Module Section */
+        .module {
+            background: #0a0a0a;
+            border-top: 1px solid #1f1f23;
+            border-bottom: 1px solid #1f1f23;
+        }
+
+        .module-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #1f1f23;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            border-color: #dc2626;
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: #0a0a0a;
+            border-top: 1px solid #1f1f23;
+            border-bottom: 1px solid #1f1f23;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+            border-radius: 16px;
+            border: 1px solid #1f1f23;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            border-color: #dc2626;
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
+        }
+
+        .review-content {
+            padding: 2rem;
+        }
+
+        .review-stars {
+            color: #dc2626;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: #d4d4d8;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #dc2626;
+        }
+
+        .author-info h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #a1a1aa;
+            font-size: 0.9rem;
         }
 
         /* Contact Section */
@@ -667,6 +783,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -765,7 +882,7 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card featured-project">
                     <div class="project-img">
                         <video src="img\2025-06-22_03-10-12.mp4" loop muted autoplay playsinline
                             style="background: linear-gradient(45deg, #dc2626, #b91c1c); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
@@ -773,6 +890,7 @@
                         </video>
                     </div>
                     <div class="project-content">
+                        <span class="project-badge">Featured</span>
                         <h3 class="project-title">Project 100</h3>
                         <p class="project-description">A Roblox game inspired by Sword Art Online, featuring immersive
                             worlds and unique gameplay mechanics.</p>
@@ -789,24 +907,72 @@
                             <a href="https://discord.gg/VsfwHsdsN5" class="project-link discord"
                                 target="_blank">Discord</a>
                         </div>
-
                     </div>
-
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Section -->
+    <section id="module" class="module">
+        <div class="container">
+            <h2 class="section-title">Viewmodel Handler Module</h2>
+            <div class="module-card">
+                <div class="project-content">
+                    <h3 class="project-title">Viewmodel Handler</h3>
+                    <p class="project-description">A powerful and efficient Roblox module for managing first-person
+                        viewmodels. Features include smooth animations, weapon sway, customizable offsets, and easy
+                        integration with existing weapon systems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Luau</span>
+                        <span class="tech-tag">Roblox Studio</span>
+                        <span class="tech-tag">Module</span>
+                        <span class="tech-tag">Open Source</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Viewmodel Handler</h3>
-                        <p class="project-description">Viewmodel Handler for Roblox games made by me.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Luau</span>
-                            <span class="tech-tag">Roblox Studio</span>
-                            <span class="tech-tag">Visual Studio</span>
+                    <div class="project-links">
+                        <a href="https://github.com/lukaxdq/ViewmodelHandler" class="project-link" target="_blank">View
+                            on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Reviews</h2>
+            <div class="reviews-grid">
+                <!--
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Working with Luka was a great experience. His expertise in Lua/Luau and
+                            game development helped us optimize our project and improve performance significantly."</p>
+                        <div class="review-author">
+                            <img src="https://cdn.discordapp.com/avatars/358030688785793026/5449a0c0bc56a2dd1d0ff57925cfaf56.webp?size=1024"
+                                alt="Bruce" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Distracted Games</h4>
+                                <p>Lead Developer, Distracted Games</p>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/lukaxdq/ViewmodelHandler" class="project-link patreon"
-                                target="_blank">GitHub</a>
+                    </div>
+                </div>-->
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Luka is a very hardworking person, he will make sure your task is
+                            completed to the fullest and you are satisfied, 10/10!"</p>
+                        <div class="review-author">
+                            <img src="https://api.dicebear.com/6.x/initials/svg?seed=V&backgroundColor=dc2626"
+                                alt="Vortex" class="author-avatar">
+                            <div class="author-info">
+                                <a href="https://discord.com/users/602611579262992401" target="_blank">
+                                    <h4>Vortex</h4>
+                                </a>
+                                <p>Game Owner, Builder</p>
+                            </div>
                         </div>
                     </div>
                 </div>
