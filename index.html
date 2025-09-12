@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luka - Game Developer</title>
+    <title>lukadev</title>
     <style>
         * {
             margin: 0;
@@ -13,1039 +13,388 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #e4e4e7;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0a0a;
-            scroll-behavior: smooth;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         /* Header */
-        header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid #1f1f23;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            margin-bottom: 4rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #a1a1aa;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(90deg, #dc2626, #b91c1c);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            color: white;
-            padding: 140px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease;
-            letter-spacing: -0.02em;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            color: #a1a1aa;
-            animation: fadeInUp 1s ease 0.2s both;
-            font-weight: 400;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            color: #ffffff;
-            padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.4);
-        }
-
-        /* Terminal Window */
-        .terminal-window {
-            background: #1a1a1a;
-            border: 1px solid #dc2626;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
-            font-family: 'Courier New', monospace;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .terminal-header {
-            background: #2a2a2a;
-            padding: 0.5rem 1rem;
-            border-bottom: 1px solid #dc2626;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .terminal-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .terminal-buttons span {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .btn-close {
-            background: #dc2626;
-        }
-
-        .btn-minimize {
-            background: #525252;
-        }
-
-        .btn-maximize {
-            background: #525252;
-        }
-
-        .terminal-title {
-            color: #dc2626;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .terminal-body {
-            padding: 1rem;
-            color: #dc2626;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .terminal-line {
-            margin-bottom: 0.3rem;
-        }
-
-        .prompt {
-            color: #dc2626;
-        }
-
-        .command {
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .terminal-output {
-            color: #a1a1aa;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-        }
-
-        .typing-animation {
-            border-right: 2px solid #dc2626;
-            animation: typing 2s steps(20) infinite, blink 1s infinite;
-        }
-
-        @keyframes typing {
-            0% {
-                width: 0;
-            }
-
-            50% {
-                width: 100%;
-            }
-
-            100% {
-                width: 0;
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                border-color: #dc2626;
-            }
-
-            51%,
-            100% {
-                border-color: transparent;
-            }
-        }
-
-        /* Matrix Rain Effect */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                linear-gradient(90deg, transparent 98%, rgba(220, 38, 38, 0.03) 100%),
-                linear-gradient(180deg, transparent 98%, rgba(220, 38, 38, 0.03) 100%);
-            background-size: 20px 20px;
-            animation: matrix-rain 20s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes matrix-rain {
-            0% {
-                transform: translateY(-100%);
-            }
-
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 4rem;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-        }
-
-        /* About Section */
-        .about {
-            background: #111111;
-            border-top: 1px solid #1f1f23;
-            border-bottom: 1px solid #1f1f23;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: center;
-            text-align: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d4d4d8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: #0a0a0a;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid #1f1f23;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.5), transparent);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-            border-color: #dc2626;
-            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #dc2626;
-            font-weight: bold;
-        }
-
-        .skill-card h3 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card p {
-            color: #a1a1aa;
-            font-size: 0.95rem;
-        }
-
-        /* Projects Section */
-        .projects {
-            background: #111111;
-            border-top: 1px solid #1f1f23;
-            border-bottom: 1px solid #1f1f23;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #1f1f23;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        /* Featured project (bigger, more prominent) */
-        .project-card.featured-project {
-            grid-column: span 2;
-        }
-
-        .project-card.featured-project .project-img {
-            height: 320px;
-        }
-
-        .project-card.featured-project .project-title {
-            font-size: 1.6rem;
-        }
-
-        /* Small project (subtle) */
-        .project-card.small-project {
-            opacity: 0.85;
-            transform: none;
-        }
-
-        .project-card.small-project .project-img {
-            height: 140px;
-            background: linear-gradient(135deg, #141414 0%, #0f0f0f 100%);
-        }
-
-        .project-card.small-project .project-title {
-            font-size: 1.05rem;
-        }
-
-        .project-card.small-project .project-description {
-            font-size: 0.95rem;
-            color: #bdbdbf;
-            max-height: 3.6em;
-            overflow: hidden;
-        }
-
-        .project-img {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, #1f1f23 0%, #2a2a2a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a1a1aa;
             font-size: 1.2rem;
             font-weight: 600;
-            border-bottom: 1px solid #1f1f23;
-            overflow: hidden;
-        }
-
-        .project-badge {
-            display: inline-block;
-            background: linear-gradient(90deg, #dc2626, #b91c1c);
-            color: #fff;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.8rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
             color: #ffffff;
         }
 
-        .project-description {
-            color: #a1a1aa;
+        .blog-link {
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: #ffffff;
+        }
+
+        .blog-link::after {
+            content: " →";
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* Left Section */
+        .intro-section h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
             margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #888888;
+            margin-bottom: 3rem;
             line-height: 1.6;
         }
 
-        .project-tech {
+        .contact-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(220, 38, 38, 0.1);
-            border: 1px solid rgba(220, 38, 38, 0.2);
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #dc2626;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
+            flex-direction: column;
             gap: 1rem;
-            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #ffffff;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        .support-section {
+            border-top: 1px solid #222222;
+            padding-top: 2rem;
+        }
+
+        .support-title {
+            font-size: 0.95rem;
+            color: #888888;
+            margin-bottom: 1rem;
+        }
+
+        .support-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .support-link:hover {
+            color: #ffffff;
+        }
+
+        /* Right Section */
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: #888888;
+            margin-bottom: 2rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 0.95rem;
+            color: #888888;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .skill-category h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .skill-category p {
+            font-size: 0.95rem;
+            color: #888888;
+            line-height: 1.5;
+        }
+
+        /* Projects Section */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-item p {
+            font-size: 0.95rem;
+            color: #888888;
+            line-height: 1.5;
         }
 
         .project-link {
-            color: #dc2626;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            padding: 8px 16px;
-            border: 1px solid #dc2626;
-            border-radius: 8px;
         }
 
         .project-link:hover {
-            background: #dc2626;
-            color: #ffffff;
+            text-decoration: underline;
         }
 
-        .project-link.patreon {
-            border-color: #ff424d;
-            color: #ff424d;
-        }
-
-        .project-link.patreon:hover {
-            background: #ff424d;
-        }
-
-        .project-link.discord {
-            border-color: #5865f2;
-            color: #5865f2;
-        }
-
-        .project-link.discord:hover {
-            background: #5865f2;
-        }
-
-        /* Module Section */
-        .module {
-            background: #0a0a0a;
-            border-top: 1px solid #1f1f23;
-            border-bottom: 1px solid #1f1f23;
-        }
-
-        .module-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #1f1f23;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .module-card:hover {
-            transform: translateY(-8px);
-            border-color: #dc2626;
-            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background: #0a0a0a;
-            border-top: 1px solid #1f1f23;
-            border-bottom: 1px solid #1f1f23;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .review-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
-            border-radius: 16px;
-            border: 1px solid #1f1f23;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .review-card:hover {
-            transform: translateY(-8px);
-            border-color: #dc2626;
-            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
-        }
-
-        .review-content {
-            padding: 2rem;
-        }
-
-        .review-stars {
-            color: #dc2626;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            color: #d4d4d8;
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #dc2626;
-        }
-
-        .author-info h4 {
-            color: #ffffff;
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .author-info p {
-            color: #a1a1aa;
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: #0a0a0a;
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-content>p {
-            font-size: 1.2rem;
-            color: #d4d4d8;
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-item {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #1f1f23;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            border-color: #dc2626;
-            transform: translateY(-4px);
-        }
-
-        .contact-item h3 {
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item a {
-            color: #dc2626;
+        .more-projects {
+            color: #888888;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
-        .contact-item a:hover {
-            color: #b91c1c;
+        .more-projects:hover {
+            color: #ffffff;
         }
 
-        /* Footer */
-        footer {
-            background: #111111;
-            border-top: 1px solid #1f1f23;
-            color: #a1a1aa;
-            text-align: center;
-            padding: 3rem 0;
+        .more-projects::after {
+            content: " →";
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Section Divider */
+        .section-divider {
+            border-top: 1px solid #222222;
+            padding-top: 3rem;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            body {
+                padding: 1rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .header {
+                margin-bottom: 2rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
+            .main-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 3rem;
+            }
+
+            .intro-section h1 {
+                font-size: 2rem;
+            }
+
+            .right-section {
                 gap: 2rem;
             }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-links {
-                flex-direction: column;
-            }
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1f1f23;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2a2a2a;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">Luka</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">lukadev</div>
+            <a href="#" class="blog-link">go to blog</a>
+        </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="btn-close"></span>
-                            <span class="btn-minimize"></span>
-                            <span class="btn-maximize"></span>
-                        </div>
-                        <div class="terminal-title">luka@gamedev:~$</div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Section -->
+            <section class="intro-section">
+                <h1>hello, i'm luka.</h1>
+                <p>cybersecurity enthusiast and<br>aspiring penetration tester.</p>
+
+                <div class="contact-links">
+                    <a href="https://github.com/lukaxdq" class="contact-link" target="_blank">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>github<br>lukaxdq</span>
+                    </a>
+                    <a href="https://discord.com/users/998585779804708864" class="contact-link" target="_blank">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z" />
+                        </svg>
+                        <span>discord<br>l1uka1</span>
+                    </a>
+                    <a href="mailto:pajkanovicluka7@gmail.com" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.749L12 10.724l9.615-6.903h.749c.904 0 1.636.732 1.636 1.636z" />
+                        </svg>
+                        <span>email<br>pajkanovicluka7@gmail.com</span>
+                    </a>
+                </div>
+
+                <div class="support-section">
+                    <div class="support-title">support me</div>
+                    <a href="#" class="support-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-.766-1.658A4.52 4.52 0 0 0 15.204 2h-.132A4.52 4.52 0 0 0 11.204 4.151c-.378.495-.647 1.06-.766 1.658l-.132.666A4.52 4.52 0 0 0 6.204 10.5v.5c0 2.694 1.194 5.1 3.204 6.722v3.278h5.184v-3.278c2.01-1.622 3.204-4.028 3.204-6.722v-.5a4.52 4.52 0 0 0-4.1-4.085z" />
+                        </svg>
+                        <span>buy me a coffee<br>lukadev</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Right Section -->
+            <section class="right-section">
+                <!-- About Section -->
+                <div class="about-section">
+                    <h2 class="section-title">about me</h2>
+                    <p class="section-subtitle">cybersecurity professional in the making.</p>
+
+                    <div class="about-content">
+                        <p>i am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in
+                            programming and security research. my expertise lies in offensive security methodologies,
+                            including active directory exploitation and automation scripting.</p>
+
+                        <p>currently focusing on developing roblox game project 100 and enhancing my penetration
+                            testing skills. i specialize in windows environments with extensive linux experience,
+                            combining technical proficiency with practical security applications.</p>
+
+                        <p>always open to learning, collaborating, and exploring new frontiers in cybersecurity.
+                            passionate about contributing to the security community through research and knowledge
+                            sharing.</p>
                     </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="prompt">┌──(luka㉿dev)-[~/gamedev]</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="prompt">└─$ </span><span class="command">whoami</span>
-                        </div>
-                        <div class="terminal-output">Luka - Game Developer & Lua/Luau Specialist</div>
-                        <div class="terminal-line">
-                            <span class="prompt">└─$ </span><span class="command">cat experience.txt</span>
-                        </div>
-                        <div class="terminal-output">1 Year Experience | Roblox Studio | Game Logic & AI</div>
-                        <div class="terminal-line">
-                            <span class="prompt">└─$ </span><span
-                                class="command typing-animation">./start_project.sh</span>
-                        </div>
-                    </div>
                 </div>
-                <h1>Hi, I'm Luka</h1>
-                <p>Game Developer & Lua/Luau Dev</p>
-                <a href="#contact" class="btn">Let's Build Something</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm an enthusiastic game developer with one year of hands-on experience, specializing in Lua and
-                        Luau scripting. I enjoy building engaging gameplay mechanics and learning new ways to create
-                        immersive experiences.</p>
-                    <p>My focus is on writing clean, efficient code and optimizing game performance. I love tackling
-                        challenges and turning creative ideas into interactive projects.</p>
-                    <p>Outside of development, I explore new engines, contribute to open-source, and experiment with
-                        fresh gameplay concepts to keep growing as a developer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Skills Section -->
+                <div class="skills-section section-divider">
+                    <h2 class="section-title">technical skills</h2>
+                    <p class="section-subtitle">areas of expertise and proficiency.</p>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">GAME</div>
-                    <h3>Game Development</h3>
-                    <p>Lua, Luau, Roblox Studio, Game Logic, AI Systems</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">PERF</div>
-                    <h3>Performance Optimization</h3>
-                    <p>Memory Management, Code Profiling, Algorithm Optimization, Luau JIT</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">TOOL</div>
-                    <h3>Tools & Engines</h3>
-                    <p>Unity, Unreal Engine, Roblox Studio, Git, Visual Studio Code</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">CODE</div>
-                    <h3>Additional Skills</h3>
-                    <p>JavaScript, Python, JSON/XML, REST APIs, Database Integration</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">Luau</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card featured-project">
-                    <div class="project-img">
-                        <video src="img\2025-06-22_03-10-12.mp4" loop muted autoplay playsinline
-                            style="background: linear-gradient(45deg, #dc2626, #b91c1c); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                            Project 100 Gameplay
-                        </video>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-badge">Featured</span>
-                        <h3 class="project-title">Project 100</h3>
-                        <p class="project-description">A Roblox game inspired by Sword Art Online, featuring immersive
-                            worlds and unique gameplay mechanics.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Luau</span>
-                            <span class="tech-tag">Roblox Studio</span>
-                            <span class="tech-tag">Visual Studio</span>
+                    <div class="skills-content">
+                        <div class="skill-category">
+                            <h4>cybersecurity</h4>
+                            <p>penetration testing, exploit development, active directory security, vulnerability
+                                assessment</p>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link" onclick="alert('In development'); return false;">Play
-                                Game</a>
-                            <a href="https://www.patreon.com/c/Project100Official" class="project-link patreon"
-                                target="_blank">Patreon</a>
-                            <a href="https://discord.gg/VsfwHsdsN5" class="project-link discord"
-                                target="_blank">Discord</a>
+
+                        <div class="skill-category">
+                            <h4>programming</h4>
+                            <p>python, javascript, typescript, c++, java, luau, powershell, autohotkey scripting</p>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>web development</h4>
+                            <p>react, vue.js, next.js, node.js, tailwindcss, html5, rest apis</p>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>systems</h4>
+                            <p>windows administration, linux environments, mysql, mongodb, cloudflare</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Module Section -->
-    <section id="module" class="module">
-        <div class="container">
-            <h2 class="section-title">Viewmodel Handler Module</h2>
-            <div class="module-card">
-                <div class="project-content">
-                    <h3 class="project-title">Viewmodel Handler</h3>
-                    <p class="project-description">A powerful and efficient Roblox module for managing first-person
-                        viewmodels. Features include smooth animations, weapon sway, customizable offsets, and easy
-                        integration with existing weapon systems.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Luau</span>
-                        <span class="tech-tag">Roblox Studio</span>
-                        <span class="tech-tag">Module</span>
-                        <span class="tech-tag">Open Source</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/lukaxdq/ViewmodelHandler" class="project-link" target="_blank">View
-                            on GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Projects Section -->
+                <div class="projects-section section-divider">
+                    <h2 class="section-title">my projects</h2>
+                    <p class="section-subtitle">current work and contributions.</p>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <h2 class="section-title">Reviews</h2>
-            <div class="reviews-grid">
-                <!--<div class="review-card">
-                    <div class="review-content">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"Working with Luka was a great experience. His expertise in Lua/Luau and
-                            game development helped us optimize our project and improve performance significantly."</p>
-                        <div class="review-author">
-                            <img src="https://cdn.discordapp.com/avatars/358030688785793026/5449a0c0bc56a2dd1d0ff57925cfaf56.webp?size=1024"
-                                alt="Bruce" class="author-avatar">
-                            <div class="author-info">
-                                <h4>Distracted Games</h4>
-                                <p>Lead Developer, Distracted Games</p>
-                            </div>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <h3><a href="https://www.roblox.com/games/17712558514/Floor-One" class="project-link"
+                                    target="_blank">project 100</a></h3>
+                            <p>immersive roblox gaming experience currently in active development.</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h3>security automation tools</h3>
+                            <p>custom autohotkey scripts for penetration testing and system automation.</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h3>research</h3>
+                            <p>ongoing research into ad exploitation techniques and defensive strategies.</p>
                         </div>
                     </div>
-                </div>-->
-                <div class="review-card">
-                    <div class="review-content">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"Luka is a very hardworking person, he will make sure your task is
-                            completed to the fullest and you are satisfied, 10/10!"</p>
-                        <div class="review-author">
-                            <img src="https://api.dicebear.com/6.x/initials/svg?seed=V&backgroundColor=dc2626"
-                                alt="Vortex" class="author-avatar">
-                            <div class="author-info">
-                                <a href="https://discord.com/users/602611579262992401" target="_blank">
-                                    <h4>Vortex</h4>
-                                </a>
-                                <p>Game Owner, Builder</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <a href="https://github.com/lukaxdq" class="more-projects" target="_blank">more on github</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <p>Ready to bring your game ideas to life? I'm always excited to collaborate on innovative projects and
-                    discuss new opportunities in game development.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <a href="mailto:lukap.dev@gmail.com">lukap.dev@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/lukaxdq" target="_blank">github.com/lukaxdq</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Discord</h3>
-                        <a href="https://discord.com/users/998585779804708864" target="_blank">l1uka1</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Luka. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.98)';
-                header.style.backdropFilter = 'blur(20px)';
-            } else {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
-                header.style.backdropFilter = 'blur(20px)';
-            }
-        });
-
-        // Add subtle parallax effect to hero
-        window.addEventListener('scroll', function () {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            hero.style.transform = `translateY(${rate}px)`;
-        });
-    </script>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
