@@ -21,9 +21,19 @@ jobs:
           node-version: 18
 
       - name: Generate showcase manifest
-        run: node scripts/updateShowcaseManifest.js
+        id: generate_manifest
+        run: |
+          if [ ! -f scripts/updateShowcaseManifest.js ]; then
+            echo "Script scripts/updateShowcaseManifest.js not found. Skipping manifest generation."
+            echo "manifest-generated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          node scripts/updateShowcaseManifest.js
+          echo "manifest-generated=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push changes
+        if: steps.generate_manifest.outputs.manifest-generated == 'true'
         run: |
           if git diff --quiet; then
             echo "No changes to commit."

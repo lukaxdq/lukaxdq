@@ -170,6 +170,153 @@
             gap: 1.5rem;
         }
 
+        /* Showcase Section */
+        .showcase-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .showcase-item {
+            background: #111111;
+            border: 1px solid #1c1c1c;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.4s ease-in forwards;
+            cursor: pointer;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .showcase-item:focus,
+        .showcase-item:hover {
+            border-color: #2d2d2d;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .showcase-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #070707;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .showcase-caption {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+            text-transform: capitalize;
+        }
+
+        .showcase-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #666666;
+            font-size: 0.95rem;
+            padding: 2rem 0;
+        }
+
+        .showcase-modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .showcase-modal.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .showcase-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: min(960px, 90vw);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #101010;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .showcase-modal-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .showcase-modal-body img,
+        .showcase-modal-body video {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 12px;
+            background: #050505;
+        }
+
+        .showcase-modal-caption {
+            font-size: 1rem;
+            color: #bbbbbb;
+            text-transform: capitalize;
+        }
+
+        .showcase-modal-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2rem;
+            height: 2rem;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .showcase-modal-close:hover,
+        .showcase-modal-close:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .showcase-modal-overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        body.showcase-modal-open {
+            overflow: hidden;
+        }
+
         .skill-category {
             display: flex;
             flex-direction: column;
@@ -358,6 +505,16 @@
 
             <!-- Right Section -->
             <section class="right-section">
+                <!-- Showcase Section -->
+                <div class="showcase-section">
+                    <h2 class="section-title">showcase</h2>
+                    <p class="section-subtitle">latest media drops, click to preview.</p>
+
+                    <div class="showcase-grid" id="showcase-grid">
+                        <div class="loading">waiting for showcase media...</div>
+                    </div>
+                </div>
+
                 <!-- About Section -->
                 <div class="about-section">
                     <h2 class="section-title">about me</h2>
@@ -417,6 +574,15 @@
                 </div>
             </section>
         </main>
+    </div>
+
+    <div class="showcase-modal" id="showcase-modal" aria-hidden="true">
+        <div class="showcase-modal-overlay" id="showcase-modal-overlay"></div>
+        <div class="showcase-modal-content" role="dialog" aria-modal="true" aria-labelledby="showcase-modal-caption">
+            <button class="showcase-modal-close" id="showcase-modal-close" aria-label="close showcase preview">×</button>
+            <div class="showcase-modal-body" id="showcase-modal-body"></div>
+            <div class="showcase-modal-caption" id="showcase-modal-caption"></div>
+        </div>
     </div>
 
     <script>
@@ -484,7 +650,143 @@
         }
 
         // Load repositories when page loads
-        document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+        async function loadShowcase() {
+            const showcaseGrid = document.getElementById('showcase-grid');
+            if (!showcaseGrid) return;
+
+            try {
+                const response = await fetch(`showcase/manifest.json?cacheBust=${Date.now()}`);
+                if (!response.ok) {
+                    throw new Error(`Unexpected response: ${response.status}`);
+                }
+
+                const manifest = await response.json();
+                const items = manifest.items || [];
+
+                showcaseGrid.innerHTML = '';
+
+                if (!items.length) {
+                    showcaseGrid.innerHTML = '<div class="showcase-empty">add images or videos to the showcase/media folder to populate this section.</div>';
+                    return;
+                }
+
+                items.forEach((item, index) => {
+                    const showcaseItem = document.createElement('div');
+                    showcaseItem.className = 'showcase-item';
+                    showcaseItem.style.animationDelay = `${index * 0.05}s`;
+                     showcaseItem.tabIndex = 0;
+                     showcaseItem.setAttribute('role', 'button');
+                     showcaseItem.setAttribute('aria-label', item.title ? `open ${item.title}` : 'open showcase media');
+
+                    if (item.type === 'image') {
+                        const img = document.createElement('img');
+                        img.src = item.src;
+                        img.alt = item.title || 'showcase image';
+                        img.loading = 'lazy';
+                        img.className = 'showcase-media';
+                        showcaseItem.appendChild(img);
+                    } else if (item.type === 'video') {
+                        const video = document.createElement('video');
+                        video.src = item.src;
+                        video.controls = true;
+                        video.preload = 'metadata';
+                        video.className = 'showcase-media';
+                        showcaseItem.appendChild(video);
+                    }
+
+                    if (item.title) {
+                        const caption = document.createElement('div');
+                        caption.className = 'showcase-caption';
+                        caption.textContent = item.title;
+                        showcaseItem.appendChild(caption);
+                    }
+
+                    const openViewer = () => openShowcaseModal(item, showcaseItem);
+                    showcaseItem.addEventListener('click', openViewer);
+                    showcaseItem.addEventListener('keydown', event => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            openViewer();
+                        }
+                    });
+
+                    showcaseGrid.appendChild(showcaseItem);
+                });
+            } catch (error) {
+                console.error('Error loading showcase:', error);
+                showcaseGrid.innerHTML = '<div class="showcase-empty">failed to load showcase media. ensure the manifest exists.</div>';
+            }
+        }
+
+        const showcaseModal = document.getElementById('showcase-modal');
+        const showcaseModalOverlay = document.getElementById('showcase-modal-overlay');
+        const showcaseModalBody = document.getElementById('showcase-modal-body');
+        const showcaseModalCaption = document.getElementById('showcase-modal-caption');
+        const showcaseModalClose = document.getElementById('showcase-modal-close');
+        let showcaseActiveTrigger = null;
+
+        function openShowcaseModal(item, triggerElement) {
+            if (!showcaseModal || !showcaseModalBody) return;
+
+            showcaseActiveTrigger = triggerElement || document.activeElement;
+
+            showcaseModalBody.innerHTML = '';
+
+            if (item.type === 'image') {
+                const modalImg = document.createElement('img');
+                modalImg.src = item.src;
+                modalImg.alt = item.title || 'showcase image preview';
+                modalImg.loading = 'lazy';
+                showcaseModalBody.appendChild(modalImg);
+            } else if (item.type === 'video') {
+                const modalVideo = document.createElement('video');
+                modalVideo.src = item.src;
+                modalVideo.controls = true;
+                modalVideo.autoplay = true;
+                modalVideo.className = 'showcase-modal-video';
+                showcaseModalBody.appendChild(modalVideo);
+            }
+
+            if (showcaseModalCaption) {
+                showcaseModalCaption.textContent = item.title || '';
+            }
+
+            showcaseModal.classList.add('is-visible');
+            showcaseModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('showcase-modal-open');
+
+            showcaseModalClose?.focus();
+        }
+
+        function closeShowcaseModal() {
+            if (!showcaseModal || !showcaseModalBody) return;
+
+            showcaseModalBody.innerHTML = '';
+            if (showcaseModalCaption) {
+                showcaseModalCaption.textContent = '';
+            }
+            showcaseModal.classList.remove('is-visible');
+            showcaseModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('showcase-modal-open');
+
+            if (showcaseActiveTrigger && typeof showcaseActiveTrigger.focus === 'function') {
+                showcaseActiveTrigger.focus();
+            }
+            showcaseActiveTrigger = null;
+        }
+
+        showcaseModalClose?.addEventListener('click', closeShowcaseModal);
+        showcaseModalOverlay?.addEventListener('click', closeShowcaseModal);
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && showcaseModal?.classList.contains('is-visible')) {
+                closeShowcaseModal();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchGitHubRepos();
+            loadShowcase();
+        });
     </script>
 </body>
 
