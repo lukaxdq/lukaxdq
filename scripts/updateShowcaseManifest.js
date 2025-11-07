@@ -6,7 +6,7 @@ const MEDIA_DIR = path.join(SHOWCASE_DIR, 'media');
 const MANIFEST_PATH = path.join(SHOWCASE_DIR, 'manifest.json');
 
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.bmp']);
-const VIDEO_EXTENSIONS = new Set(['.mp4', '.webm', '.ogg', '.mov', '.m4v', '.avi']);
+const VIDEO_EXTENSIONS = new Set(['.mp4', '.webm', '.ogg', '.mov', '.m4v', '.avi', '.mkv']);
 
 function getMediaType(extension) {
     if (IMAGE_EXTENSIONS.has(extension)) {
