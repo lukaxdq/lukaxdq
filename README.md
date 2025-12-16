@@ -1,45 +1,116 @@
-Hello, I'm Luka!
+<div align="center">
 
-About Me
+<img src="img\img.jpeg" alt="Header Banner" width="100%"/>
 
-I am a cybersecurity enthusiast and aspiring penetration tester with a strong foundation in programming and security research. My expertise lies in offensive security methodologies, including Active Directory exploitation and automation with AutoHotkey (AHK).
+# 👋 Hey, I'm Luka
 
-Working on [Project 100](https://www.roblox.com/games/17712558514/Floor-One)
+### Developer • Tech Enthusiast • Problem Solver
 
-Technical Skills 
+*Building and breaking things to understand how they work*
 
-Cybersecurity: Penetration testing, exploit development, and Active Directory security
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/998585779804708864)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pajkanovicluka7@gmail.com)
 
-Automation: AutoHotkey (AHK) scripting for security and system automation
-
-Operating Systems: Proficient in Windows, with experience in Linux environments
-
-## 🌐 Socials:
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/https://discord.com/users/998585779804708864) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:pajkanovicluka7@gmail.com) 
-
-# 💻 Tech Stack:
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=flat&logo=markdown&logoColor=white) ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=Cloudflare&logoColor=white) ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=flat&logo=.net&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=flat&logo=npm&logoColor=white) ![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=flat&logo=vuedotjs&logoColor=%234FC08D) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat&logo=react-router&logoColor=white) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat&logo=nestjs&logoColor=white) ![Next JS](https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white) ![Expo](https://img.shields.io/badge/expo-1C1E24?style=flat&logo=expo&logoColor=#D04A37) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=flat&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) ![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=flat&logo=Arduino&logoColor=white)
-
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=lukaxdq&theme=dark&hide_border=true&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=lukaxdq&theme=dark&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact)
-
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4)
-
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=light)
-
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=lukaxdq&limit=5&theme=dark&combine_all_yearly_contributions=true)
+</div>
 
 ---
-[![](https://visitcount.itsvg.in/api?id=lukaxdq&icon=2&color=0)](https://visitcount.itsvg.in)
 
-📬 Get in Touch
+## 🎯 About Me
 
-Email: pajkanovicluka7@gmail.com
+I'm a passionate **developer** who loves diving deep into code, exploring new technologies, and building creative solutions. I enjoy working across the stack and experimenting with different programming paradigms.
 
-Always open to learning, collaborating, and exploring new frontiers in cybersecurity! 🚀
+### 💻 What I Work With
 
+```yaml
+Development:
+  - Full-stack web applications
+  - Automation & scripting
+  - System administration
+  
+Languages I Love:
+  - Python for versatility
+  - JavaScript/TypeScript for web
+  - PowerShell & AutoHotkey for automation
+  
+Systems:
+  - Windows environments
+  - Linux systems
+  - Network protocols
+```
+
+---
+
+## 🛠️ Tech Arsenal
+
+### Languages
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+
+### Frameworks & Tools
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+
+---
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=lukaxdq&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF" alt="GitHub Stats" height="180"/>
+<img src="https://nirzak-streak-stats.vercel.app/?user=lukaxdq&theme=radical&hide_border=true&background=0D1117&ring=F85D7F&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak" height="180"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lukaxdq&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF&layout=compact&langs_count=8" alt="Top Languages" height="180"/>
+
+</div>
+
+---
+
+## 🏆 Achievements
+
+<div align="center">
+
+![Trophies](https://github-profile-trophy.vercel.app/?username=lukaxdq&theme=radical&no-frame=true&no-bg=true&margin-w=4&column=7)
+
+</div>
+
+---
+
+## 💡 Random Dev Quotes
+
+<div align="center">
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
+</div>
+
+---
+
+## 🤝 Let's Connect
+
+I'm always open to discussing:
+- **Tech projects** and new ideas
+- **Collaboration** on open-source tools
+- **Knowledge sharing** in development and automation
+- **Project opportunities** in software development
+
+<div align="center">
+
+**📧 Email:** [pajkanovicluka7@gmail.com](mailto:pajkanovicluka7@gmail.com)
+
+**💬 Discord:** [lukaxdq](https://discord.com/users/998585779804708864)
+
+---
+
+![Visitors](https://visitcount.itsvg.in/api?id=lukaxdq&icon=5&color=6)
+
+*"The best way to predict the future is to invent it."* — Alan Kay
+
+</div>
