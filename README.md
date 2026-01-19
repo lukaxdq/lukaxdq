@@ -26,7 +26,6 @@ Development:
   - System administration
   
 Languages I Love:
-  - Python for versatility
   - JavaScript/TypeScript for web
   - PowerShell & AutoHotkey for automation
   
