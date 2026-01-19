@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="img\img.jpeg" alt="Header Banner" width="100%"/>
-
 # 👋 Hey, I'm Luka
 
-### Developer • Tech Enthusiast • Problem Solver
+### Developer • Tech Enthusiast
 
 *Building and breaking things to understand how they work*
 
